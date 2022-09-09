@@ -1,3 +1,5 @@
+//check sorted array 
+// time complexity O(n)
 public class CheckSortedArray {
 	public static boolean sort(int arr[], int index) {
 		//base case 
