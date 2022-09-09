@@ -1,6 +1,7 @@
 /**
  * TowerOfHanoi
  */
+// time complaxity O(2^n - 1) = O(2^n);
 public class TowerOfHanoi {
 	public static void tower(int n, String surce, String helper, String Distination) {
 		// base case 
