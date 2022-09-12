@@ -1,4 +1,6 @@
-/* print sub-sequance */
+/* print sub-sequance 
+ * time compaxity O(2 ^ n)
+*/
 public class printSubsequance {
 	public static void subSequance(String name, int index, String newString) {
 
