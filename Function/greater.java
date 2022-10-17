@@ -2,7 +2,7 @@
 // the greater of those two 
 import java.util.*;
 public class greater {
-public static int findGreater() {
+static int findGreater() {
     try (Scanner sc = new Scanner(System.in)) {
         int a = sc.nextInt();
         int b = sc.nextInt();

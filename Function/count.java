@@ -21,10 +21,9 @@ public class count {
                 } else {
                     zeros++;
                 };
-
-                System.out.print("press 1 to continue & 0 to stop");
+                System.out.print("press 1 to continue & 0 to stop -> ");
                 input = sc.nextInt();
-            }
+            };
         };
         System.out.println("positive : " + positive);
         System.out.println("negative : " + negative);

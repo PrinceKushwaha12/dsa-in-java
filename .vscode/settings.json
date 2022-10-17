@@ -1,6 +1,6 @@
-{
-  "debug.console.collapseIdenticalLines": true,
-  "search.collapseResults": "alwaysExpand",
-  "editor.foldingImportsByDefault": false,
-  "editor.inlayHints.padding": false
-}
+// {
+//   "debug.console.collapseIdenticalLines": true,
+//   "search.collapseResults": "alwaysExpand",
+//   "editor.foldingImportsByDefault": false,
+//   "editor.inlayHints.padding": false
+// }
