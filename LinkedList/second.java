@@ -1,66 +1,67 @@
 public class second {
     Node head;
     public int size;
-    // creating same calss constracter 
+    
     second() {
         size = 0;
     }
-    // create node 
+
     public class Node {
-        String data;
+        int data;
         Node next;
 
-        Node(String data) {
+        Node(int data) {
             this.data = data;
             this.next = null;
             size++;
         };
     };
-    
-    // addfirst
-    public void add(String data) {
+
+    // add first 
+    public void addFirst(int data) {
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
     };
 
-    // addLast 
-    public void addLast(String data) {
+    // add last 
+    public void addLast(int data) {
         Node newNode = new Node(data);
         if(head == null) {
             head = newNode;
         };
 
-        Node nayaNode = head;
-        while(nayaNode.next != null) {
-            nayaNode = nayaNode.next;
+        Node storeHead = head;
+        while(storeHead.next != null) {
+            storeHead = storeHead.next;
         };
-        nayaNode.next = newNode;
+        storeHead.next = newNode;
     };
 
     // print list 
     public void printList() {
         Node newNode = head;
         while(newNode != null) {
-            System.out.print(newNode.data + " ");
+            System.out.print(newNode.data + "->");
             newNode = newNode.next;
-        };
-    };
+        }
+    }
 
     // remove first 
     public void removeFirst() {
         if(head == null) {
-            System.out.println("List is Empty ? ");
+            System.out.println("List is empty ?");
             return;
         };
-        size--;
+        
         head = this.head.next;
+        size--;
     };
 
     // remove last 
     public void removeLast() {
         if(head == null) {
-            System.out.println("List is Empty ? ");
+            System.out.println("List is empty ?");
             return;
         };
 
@@ -70,23 +71,30 @@ public class second {
             return;
         };
 
-        Node current = head;
-        Node past = head.next;
-        while(past.next != null) {
-            current = current.next;
-            past = past.next;
+        Node storeFirst = head;
+        Node storeLast = head.next;
+
+        while(storeLast.next != null) {
+            storeFirst = storeFirst .next;
+            storeLast = storeLast.next;
         };
-        current.next = null;
+        storeFirst.next = null;
     };
 
     public static void main(String[] args) {
         second sc = new second();
-        sc.add("prince");
-        sc.add("name");
-        sc.addLast("kumar");
-        // sc.removeFirst();
-        // sc.removeLast();
-        sc.printList();
-        System.out.println(sc.size);
+        sc.addFirst(1);
+        sc.addFirst(2);
+        sc.addFirst(3);
+        sc.addLast(0);
+        sc.addLast(0);
+        sc.addLast(0);
+        sc.removeFirst();
+        sc.removeLast();
+        sc.removeLast();
+        sc.printList(); 
+        System.out.println();
+        System.out.println("size is " + sc.size);   
+        
     };
 };

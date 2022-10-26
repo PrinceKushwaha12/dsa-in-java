@@ -1,10 +1,5 @@
-public class First {
+public class reverseList {
     Node head;
-    public int size;
-
-    First() {
-        size = 0;
-    }
 
     public class Node {
         int num;
@@ -13,7 +8,6 @@ public class First {
         Node(int num) {
             this.num = num;
             this.next = null;
-            size++;
         };
     };
 
@@ -57,8 +51,7 @@ public class First {
         };
 
         head = head.next;
-        size--;
-    }; 
+    };
 
     // remove last 
     public void removeLast() {
@@ -67,7 +60,6 @@ public class First {
             return;
         };
 
-        size--;
         if(head.next == null) {
             head = null;
             return;
@@ -111,40 +103,10 @@ public class First {
         head.next.next = head;
         head.next = null;
         return storeNode;
-    }; 
-
-    // find length of LinkedList
-    public int length() {
-        int count = 0;
-        Node storeNode = head;
-        while(storeNode != null) {
-            storeNode = storeNode.next;
-            count++;
-        };
-        return count;
-    };
-
-    // print middle element 
-    public void printMiddleElement() {
-        if(head == null) {
-            System.out.println("List is empty ?");
-        };
-
-        Node storeNode = head;
-        if(head != null) {
-            int length = length();
-            int middle = length / 2;
-            while(middle != 0) {
-                storeNode = storeNode.next;
-                middle--;
-            };
-        };
-
-        System.out.println("middle element is -> " + storeNode.num);
     };
 
     public static void main(String[] args) {
-        First sc = new First();
+        reverseList sc = new reverseList();
         sc.addFirst(0);
         sc.addFirst(1);
         sc.addLast(2);
@@ -154,6 +116,5 @@ public class First {
         // sc.reverseIterative();
         sc.head = sc.reverseRecursive(sc.head); 
         sc.printList();        
-        System.out.println(sc.length());
     };
 };
