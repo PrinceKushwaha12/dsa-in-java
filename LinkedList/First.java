@@ -143,6 +143,56 @@ public class First {
         System.out.println("middle element is -> " + storeNode.num);
     };
 
+    // delete index from Nth in end
+    public Node removeFromNthIndex(Node head, int n) {
+        // base case
+        if(head.next == null) {
+            return null;
+        };
+
+        // find length 
+        int size = 0;
+        Node current = head;
+        while(current != null) {
+            current = current.next;
+            size++;
+        };
+
+        // check size 
+        if(size == n) {
+            return head.next;
+        };
+
+        // main code 
+        int length = size - n;
+        int i = 1;
+        Node preNode = head;
+        while(i < length) {
+            preNode = preNode.next;
+            i++;
+        };
+
+        preNode.next = preNode.next.next;
+        return head;
+    };
+
+    // delete middle element 
+    public void delete() {
+        if(head == null || head.next == null) {
+            return;
+        };
+
+        Node storeNode = head;
+        int length = length();
+        int sizeOfMiddle = length / 2;
+        int index = 1;
+        while(index != sizeOfMiddle) {
+            storeNode = storeNode.next;
+            index++;
+        };
+        storeNode.next = storeNode.next.next;
+    };
+
     public static void main(String[] args) {
         First sc = new First();
         sc.addFirst(0);

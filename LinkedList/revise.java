@@ -75,13 +75,12 @@ public class revise {
 
     // count length
     public int length() {
-        Node storeNode = head;
-        int count = 0;
-        while(storeNode != null) {
-            storeNode = storeNode.next;
-            count++;
+        int size = 0;
+        while(head != null) {
+            head = head.next;
+            size++;
         };
-        return count;
+        return size;
     };
 
     // print middle element 
@@ -146,16 +145,48 @@ public class revise {
         return store;
     };
 
+    public Node removeFromNthIndex(Node head, int n) {
+        // base case
+        if(head.next == null) {
+            return null;
+        };
+
+        // find length 
+        int size = 0;
+        Node current = head;
+        while(current != null) {
+            current = current.next;
+            size++;
+        };
+
+        // check size 
+        if(size == n) {
+            return head.next;
+        };
+
+        // main code 
+        int length = size - n;
+        int i = 1;
+        Node preNode = head;
+        while(i < length) {
+            preNode = preNode.next;
+            i++;
+        };
+
+        preNode.next = preNode.next.next;
+        return head;
+    };
+
     public static void main(String[] args) {
-        revise sc = new revise();
-        sc.addFirst(0);  
-        sc.addFirst(1);  
-        sc.addFirst(2);
+        revise sc = new revise();  
+        sc.addLast(1);
+        sc.addLast(2);
         sc.addLast(3);
         sc.addLast(4);
-        sc.printList();  
-        sc.head = sc.reverseRecursive(sc.head); 
-        sc.printMiddleElement();    
+        sc.addLast(5);
+        sc.printList();     
+        sc.head = sc.removeFromNthIndex(sc.head, 2);
         sc.printList();
+        
     };
 };
